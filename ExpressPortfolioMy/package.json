@@ -20,6 +20,14 @@
   "homepage": "https://github.com/Dunglailaptop/ExpressPortFoLio#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "@prisma/client": "^5.16.1",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "prisma": "^5.16.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
   }
 }
