@@ -1,12 +1,19 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/DataMyPortFoLio',async (req, res) => {
+  try {
+    const PortFoLioInfo = await prisma.PortFoLioInfo.findMany();
+    res.json(PortFoLioInfo);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 app.listen(port, () => {
