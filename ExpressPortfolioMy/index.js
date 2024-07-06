@@ -7,6 +7,12 @@ const prisma = new PrismaClient();
 const app = express();
 const port = 3000;
 
+app.get('/', (req,res) => {
+   res.send(
+    "hello world"
+   )
+});
+
 app.get('/DataMyPortFoLio',async (req, res) => {
 
     const PortFoLioInfo = await prisma.inFoMyPortFoLio.findMany();
