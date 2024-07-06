@@ -8,17 +8,12 @@ const app = express();
 const port = 3000;
 
 app.get('/DataMyPortFoLio',async (req, res) => {
-  try {
-    const PortFoLioInfo = await prisma.PortFoLioInfo.findMany();
+
+    const PortFoLioInfo = await prisma.inFoMyPortFoLio.findMany();
     res.json(PortFoLioInfo);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+ 
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
 
 // Thiết lập multer để lưu file vào thư mục 'images'
 const storage = multer.diskStorage({
