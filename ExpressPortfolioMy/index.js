@@ -13,12 +13,7 @@ app.get('/', (req,res) => {
    );
 });
 
-app.get('/DataMyPortFoLio',async (req, res) => {
 
-    const PortFoLioInfo = await prisma.inFoMyPortFoLio.findMany();
-    res.json(PortFoLioInfo);
- 
-});
 
 
 // Thiết lập multer để lưu file vào thư mục 'images'
